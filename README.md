@@ -20,7 +20,7 @@ Then open http://localhost:8000
 
 ## Before publishing, replace these
 
-1. `assets/portrait.jpg`: drop in a photo (portrait orientation, ~600×750 or larger).
+1. `assets/portrait.png`: drop in a photo (portrait orientation, ~600×750 or larger).
    Until that file exists the page falls back to `assets/portrait-placeholder.svg`.
 2. `assets/Batal_Fadel_CV.pdf`: export the CV to PDF and put it here.
 3. Google Scholar link in the nav: `YOUR_ID` is a placeholder.
