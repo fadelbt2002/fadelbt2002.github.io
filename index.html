@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fadel Batal</title>
-<meta name="description" content="Fadel Batal — imaging AI research at Children's Hospital of Philadelphia. Building clinical models that know when they don't know: uncertainty quantification, out-of-distribution detection, and abstention.">
+<meta name="description" content="Fadel Batal. Computer vision and deep learning for medical imaging, with a focus on pediatric neuro-oncology. Research data analyst at the Center for Data-Driven Discovery in Biomedicine, Children's Hospital of Philadelphia.">
 <link rel="stylesheet" href="style.css">
 <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0b10'/><path d='M9 22V10h13M9 16h9' stroke='%236ee7ff' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>">
@@ -58,11 +58,12 @@
     <p>I am a research data analyst at the <a href="https://d3b.center/">Center for Data-Driven
     Discovery in Biomedicine</a> at Children&rsquo;s Hospital of Philadelphia, working with
     <a href="https://www.chop.edu/doctors/fathi-kazerooni-anahita">Dr. Anahita Fathi Kazerooni</a>.
-    My work spans multimodal survival modeling in pediatric low-grade glioma, segmentation-free
+    I work on multimodal survival modeling in pediatric low-grade glioma, segmentation-free
     differential diagnosis of posterior fossa tumors across multiple institutions, and multireader
-    studies of how radiologists incorporate model output into diagnostic decisions. A methodological
-    thread runs through all of it: quantifying predictive uncertainty, detecting out-of-distribution
-    inputs, and allowing a model to abstain instead of returning an unreliable prediction.</p>
+    studies of how radiologists use model output in diagnosis. All three raise the same
+    methodological question, which is how a model should represent what it does not know. My work
+    quantifies predictive uncertainty, detects out-of-distribution inputs, and allows a model to
+    abstain rather than return an unreliable prediction.</p>
 
     <p>I hold BSE and MSE degrees in Bioengineering from the <a href="https://be.seas.upenn.edu/">University
     of Pennsylvania</a>. My master&rsquo;s thesis, on non-invasive and segmentation-free prediction of
@@ -79,18 +80,30 @@
   <section id="research" class="reveal">
     <h2 class="label"><span>01</span> Selected work</h2>
 
-    <article class="work">
+    <article class="work work-wide">
       <figure>
-        <img src="assets/work-lgg.svg" alt="Per-patient risk scores drawn with confidence intervals">
+        <img class="figure-light" src="assets/work-lgg-figure.png"
+             alt="Study design: radiomic and deep learning features extracted from MRI, fused with molecular status through a late-fusion Cox model to produce risk stratification">
       </figure>
       <div class="work-body">
-        <h3>Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma</h3>
-        <p>Individualized risk predictions are of limited clinical use without a sense of how stable
-        they are. This work fuses deep learning features from a single T2-weighted MRI with molecular
-        and clinical data across 360 imaging and 493 molecular subjects from the Children&rsquo;s
-        Brain Tumor Network, reaching a C-index up to 0.79 &mdash; and reports a per-patient
-        confidence interval alongside every risk score, so a prediction the model is unsure about
-        looks different from one it is sure about.</p>
+        <h3>Uncertainty-Aware Multimodal Survival Modeling in Pediatric Low-Grade Glioma</h3>
+        <p>Pediatric low-grade gliomas are the most common central nervous system tumors in
+        children, and their management is a balance between disease control and lifelong treatment
+        morbidity. Outcomes diverge sharply with resectability and tumor biology. Gross total
+        resection is associated with ten-year progression-free survival above 85%, while deep-seated
+        or midline tumors that require adjuvant therapy fall to roughly 50%. Molecular subtype is a
+        principal prognostic determinant under the WHO CNS5 classification. KIAA1549-BRAF fusion is
+        generally favorable, and BRAF V600E is unfavorable, particularly alongside CDKN2A
+        deletion.</p>
+        <p>Radiomic approaches improve risk stratification over clinical variables alone, but they
+        depend on tumor segmentation and multiparametric acquisition, which limits how well they
+        scale across institutions. Like most survival frameworks, they also report individualized
+        risk as a point estimate that implies more precision than the data support. This study asks
+        whether transfer-learned deep features from a single T2-weighted sequence can replace that
+        pipeline, and what molecular subtype adds once clinical and imaging information are already
+        in the model. Risk scores from a clinico-imaging model and a clinical-molecular model are
+        combined by late fusion, and bootstrap resampling attaches a confidence interval to every
+        patient&rsquo;s prediction.</p>
         <p class="venue">
           <span class="tag tag-live">Published</span>
           <em>American Journal of Neuroradiology</em>, 2026 &middot;
@@ -101,15 +114,30 @@
 
     <article class="work">
       <figure>
-        <img src="assets/work-peddx.svg" alt="A classifier abstaining on out-of-distribution cases">
+        <img src="assets/work-peddx.svg" alt="Schematic: a classifier abstaining on out-of-distribution cases">
       </figure>
       <div class="work-body">
-        <h3>Segmentation-Free Differential Diagnosis of Posterior Fossa Tumors</h3>
-        <p>Most imaging pipelines require tumor segmentation, which is slow and rarely available at
-        the point of decision. This model classifies directly from raw pre-operative MRI across 944
-        patients from three institutions, reaching up to 0.95 AUC-ROC and 87% accuracy on external
-        validation. Crucially, it declines to predict on cases that fall outside its training
-        distribution rather than producing a confident wrong answer.</p>
+        <h3>Segmentation-Free Differential Diagnosis of Pediatric Posterior Fossa Tumors</h3>
+        <p>Posterior fossa tumors are the largest category of childhood brain tumors. The major
+        entities are medulloblastoma, ependymoma, atypical teratoid/rhabdoid tumor, low-grade
+        glioma, and diffuse midline glioma. They share an anatomical compartment but differ in
+        biology, prognosis, and treatment, so the suspected diagnosis before surgery shapes how
+        aggressively a tumor is resected, whether biopsy or upfront multimodal therapy is
+        appropriate, and how families are counseled. An incorrect pre-operative impression can lead
+        to unnecessary surgery, delayed treatment, or avoidable complications such as posterior
+        fossa syndrome. These tumors nonetheless overlap substantially in MRI appearance even for
+        experienced neuroradiologists, and subspecialty pediatric neuroradiology is not available at
+        every center.</p>
+        <p>This work develops a segmentation-free classifier that operates on skull-stripped
+        T2-weighted MRI alone, removing the manual delineation step that limits most pediatric
+        imaging pipelines. The broader question is what evidence a diagnostic model owes a clinician
+        beyond an accuracy figure. The framework addresses that through probability calibration, an
+        abstention rule that returns no prediction when no class clears its threshold, and a
+        systematic out-of-distribution analysis. That analysis covers clinical shifts such as
+        post-operative and post-treatment imaging, artifact, and tumors extending beyond the
+        posterior fossa, as well as biological shifts from rare histologies withheld from training.
+        These are the conditions usually excluded from curated test sets and unavoidable in
+        deployment.</p>
         <p class="venue">
           <span class="tag">Under review</span>
           Co-first author &middot; <em>Neuro-Oncology</em>, 2026
@@ -119,17 +147,51 @@
 
     <article class="work">
       <figure>
-        <img src="assets/work-reader.svg" alt="Reader accuracy compared with and without uncertainty estimates">
+        <img src="assets/work-reader.svg" alt="Schematic: reader accuracy compared with and without uncertainty estimates">
       </figure>
       <div class="work-body">
-        <h3>Uncertainty-Aware AI Assistance: A Multireader Study</h3>
-        <p>Confidence estimates are only clinically meaningful if readers act on them. This
-        multireader study measures how radiologists&rsquo; diagnostic accuracy changes when they are
-        shown model predictions with and without accompanying uncertainty estimates, together with
-        an evaluation of the deployed workflow at an external site.</p>
+        <h3>Uncertainty-Aware AI Assistance: A Multireader Study and External Workflow Evaluation</h3>
+        <p>Showing that a diagnostic model is accurate is not the same as showing that it helps.
+        Two questions remain once a model is locked. The first is whether access to its output, and
+        to the uncertainty attached to that output, changes what a radiologist concludes. The second
+        is whether the surrounding system can be operated safely somewhere it was not built. This
+        study pairs a multireader experiment, in which neuroradiologists diagnose the same posterior
+        fossa cases before and after seeing model output, with an external deployment at a
+        collaborating institution abroad.</p>
+        <p>The deployment arm treats safety as a property of the workflow rather than of the model.
+        An auditable orchestration layer defines an intended-use boundary and enforces it in stages:
+        input and metadata validation, technical quality control, verification of preprocessing,
+        anatomical localization, inference under the locked model, then uncertainty and
+        out-of-distribution assessment. Each case ends in one of four dispositions, which are
+        release, release with caution, retry, and abstain and escalate, each with a recorded
+        rationale. Orchestration is kept separate from interpretation, so the diagnostic decision
+        stays grounded in locked quantitative tools rather than unconstrained language-model
+        inference. The evaluation asks whether in-distribution gains survive contact with a real
+        case mix that includes studies the model should decline.</p>
         <p class="venue">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
+        </p>
+      </div>
+    </article>
+
+    <article class="work">
+      <figure>
+        <img src="assets/work-tdp43.svg" alt="Schematic: aggregation kinetics of a protein under increasing oxidative stress">
+      </figure>
+      <div class="work-body">
+        <h3>Oxidative Stress and TDP-43 Aggregation <span class="earlier">earlier work</span></h3>
+        <p>TDP-43 is an RNA-binding protein whose mislocalization and aggregation is the defining
+        neuropathology of amyotrophic lateral sclerosis, and is also observed in frontotemporal
+        dementia, LATE, and Alzheimer&rsquo;s disease. Oxidative stress is thought to drive that
+        process rather than accompany it, but the two are usually studied separately. This project
+        imposed a defined oxidative environment in vitro using oxidized glutathione and measured its
+        effect on TDP-43 aggregation kinetics and liquid-liquid phase separation. It then tested
+        whether a short RNA bait known to bind TDP-43 and suppress its aggregation keeps that
+        protective effect under oxidizing conditions.</p>
+        <p class="venue">
+          <span class="tag">Undergraduate research</span>
+          Shorter Lab, Perelman School of Medicine &middot; 2022-2024
         </p>
       </div>
     </article>
@@ -166,7 +228,7 @@
       <li>
         An, K., <span class="me">Batal, F.</span>, Svyatskaya, S., Nguyen, V.
         &ldquo;Gene Therapy as a Promising Approach for the Underlying Causes of Autism Spectrum
-        Disorder.&rdquo; <em>Berkeley Pharma Tech Journal of Medicine</em> 3, no. 1 (2023): 10&ndash;25.
+        Disorder.&rdquo; <em>Berkeley Pharma Tech Journal of Medicine</em> 3, no. 1 (2023): 10-25.
         <a href="https://doi.org/10.52243/bptjm.v1i4.38">doi:10.52243/bptjm.v1i4.38</a>
       </li>
     </ol>
@@ -209,7 +271,7 @@
   <footer class="reveal">
     <p class="contact">The fastest way to reach me is
       <a href="mailto:fadelbt@seas.upenn.edu">email</a>.</p>
-    <p class="colophon">Philadelphia, PA &mdash; last updated August 2026</p>
+    <p class="colophon">Philadelphia, PA &middot; last updated August 2026</p>
   </footer>
 
 </main>

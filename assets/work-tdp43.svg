@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 230" role="img"
+     aria-label="Aggregation kinetics curves shifting earlier as oxidant concentration increases">
+  <rect width="340" height="230" fill="#0a0c12"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 44h340M0 84h340M0 124h340M0 164h340"/>
+  </g>
+  <line x1="46" y1="24" x2="46" y2="180" stroke="#ffffff" stroke-opacity="0.16"/>
+  <line x1="46" y1="180" x2="308" y2="180" stroke="#ffffff" stroke-opacity="0.16"/>
+  <!-- sigmoidal aggregation curves; higher oxidant shifts the curve left -->
+  <g fill="none" stroke-width="2.2" stroke-linecap="round">
+    <path d="M46 176 C 120 174, 168 168, 200 130 C 226 98, 250 56, 308 48"
+          stroke="#5ee7ff" opacity=".55"/>
+    <path d="M46 176 C 104 173, 144 164, 172 124 C 196 92, 224 50, 308 42"
+          stroke="#8fb6ff" opacity=".75"/>
+    <path d="M46 176 C 88 172, 120 158, 144 118 C 166 84, 198 44, 308 36"
+          stroke="#a98bff"/>
+  </g>
+  <!-- oxidant gradient key -->
+  <g font-family="ui-monospace, Menlo, monospace" font-size="9" fill="#67718a">
+    <text x="256" y="70">0 mM</text>
+    <text x="256" y="62">2 mM</text>
+    <text x="256" y="54">5 mM</text>
+  </g>
+  <circle cx="248" cy="67" r="3" fill="#5ee7ff" opacity=".55"/>
+  <circle cx="248" cy="59" r="3" fill="#8fb6ff" opacity=".75"/>
+  <circle cx="248" cy="51" r="3" fill="#a98bff"/>
+  <text x="14" y="20" font-family="ui-monospace, Menlo, monospace" font-size="10"
+        fill="#67718a" letter-spacing="1">aggregation</text>
+  <text x="46" y="204" font-family="ui-monospace, Menlo, monospace" font-size="10"
+        fill="#67718a" letter-spacing="1">time (oxidant: GSSG)</text>
+</svg>

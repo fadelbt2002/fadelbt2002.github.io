@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------
-   Fadel Batal — personal site
+   Fadel Batal personal site
    Dark, technical, zero dependencies. Restyle from the vars below.
    --------------------------------------------------------------- */
 
@@ -309,12 +309,45 @@ section { margin: 0 0 6rem; }
   border-radius: 10px;
   border: 1px solid var(--line-soft);
 }
+/* wide schematics get the full card width, stacked above the text */
+.work-wide { grid-template-columns: 1fr; gap: 1.6rem; }
+/* ...but the prose stays at a readable measure rather than filling the card */
+.work-wide .work-body h3,
+.work-wide .work-body p { max-width: 46rem; }
+
+/* published figures come on a white canvas; keep it rather than fight it */
+.work figure img.figure-light {
+  background: #fff;
+  padding: 10px;
+  border-color: var(--line);
+}
+
 .work h3 {
   margin: 0 0 .8rem;
   font-size: 1.38rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.025em;
+}
+.earlier {
+  display: inline-block;
+  transform: translateY(-3px);
+  margin-left: .5rem;
+  padding: .1rem .5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: .62rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  vertical-align: middle;
+}
+
+/* the figure column sticks while the longer write-ups scroll past it */
+@media (min-width: 901px) {
+  .work figure { position: sticky; top: 6rem; }
 }
 .work p { margin: 0 0 1rem; color: var(--ink-dim); }
 
