@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fadel Batal</title>
+<meta name="description" content="Fadel Batal — imaging AI research at the Center for Data-Driven Discovery in Biomedicine, Children's Hospital of Philadelphia. Uncertainty quantification, out-of-distribution detection, and abstention in clinical imaging models.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ف</text></svg>">
+</head>
+<body>
+
+<!-- Decorative left border strip -->
+<div class="strip" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a href="assets/Batal_Fadel_CV.pdf">CV</a>
+  <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+  <a href="https://github.com/fadelbt2002">GitHub</a>
+  <a href="https://www.linkedin.com/in/fadelbatal">LinkedIn</a>
+  <span class="nav-group">
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#talks">Talks</a>
+  </span>
+</nav>
+
+<main>
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1><span class="fn">Fadel</span> <span class="ln">Batal</span></h1>
+      <p class="arabic" dir="rtl">فاضل بطل</p>
+      <p class="affil">Children&rsquo;s Hospital of Philadelphia &middot; University of Pennsylvania.</p>
+      <p class="email"><a href="mailto:fadelbt@seas.upenn.edu">fadelbt@seas.upenn.edu</a></p>
+    </div>
+    <figure class="portrait">
+      <img src="assets/portrait.jpg" alt="Portrait of Fadel Batal"
+           onerror="this.onerror=null;this.src='assets/portrait-placeholder.svg';">
+      <figcaption>Philadelphia, Pennsylvania</figcaption>
+    </figure>
+  </header>
+
+  <section class="intro">
+    <h2 class="greeting">Marhaba <span dir="ltr">(<span dir="rtl">مرحباً</span>)</span>!</h2>
+
+    <p>A model that is accurate on average can still fail badly on the patient in front of
+    you. I build imaging models for pediatric brain tumors that report how much to trust them.</p>
+
+    <p>I am a research data analyst at the <a href="https://d3b.center/">Center for Data-Driven
+    Discovery in Biomedicine</a> at Children&rsquo;s Hospital of Philadelphia, working with
+    <a href="https://www.chop.edu/doctors/fathi-kazerooni-anahita">Anahita Fathi Kazerooni</a> on
+    survival modeling and differential diagnosis from MRI. Clinical imaging models are usually
+    evaluated on how often they are right; I am more interested in whether they know when they are
+    wrong. My work builds risk stratification and diagnostic models that quantify their own
+    confidence, flag out-of-distribution cases, and abstain rather than guess &mdash; and then
+    tests whether clinicians actually use that information.</p>
+
+    <p>I hold a BSE and an MSE in Bioengineering from the <a href="https://be.seas.upenn.edu/">University
+    of Pennsylvania</a>, where my master&rsquo;s thesis on segmentation-free molecular subtyping of
+    pediatric low-grade glioma became an oral presentation at RSNA 2025. Before that I worked in the
+    <a href="https://www.shorterlab.com/">Shorter Lab</a> at the Perelman School of Medicine on
+    protein misfolding under oxidative stress.</p>
+
+    <p>I am originally from Syria, and I am looking to start a PhD in 2027.</p>
+  </section>
+
+  <section class="outside">
+    <h2 class="label">Outside of work</h2>
+    <p>I mentor Syrian high school students applying to universities abroad through
+    <a href="https://syrianyouthempowerment.org/">Syrian Youth Empowerment</a>, which I have been
+    doing since 2022. Otherwise: long walks around Philadelphia, chemistry problems for their own
+    sake, and an ongoing argument with myself about how much coffee is too much.</p>
+  </section>
+
+  <section id="research">
+    <h2 class="label">Selected work</h2>
+
+    <article class="work">
+      <figure>
+        <img src="assets/work-lgg.svg" alt="Schematic of per-patient risk scores with confidence intervals">
+      </figure>
+      <div class="work-body">
+        <h3>Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma</h3>
+        <p>Individualized risk predictions are of limited clinical use without a sense of how stable
+        they are. This work fuses deep learning features from a single T2-weighted MRI with molecular
+        and clinical data across 360 imaging and 493 molecular subjects from the Children&rsquo;s
+        Brain Tumor Network, reaching a C-index up to 0.79 &mdash; and reports a per-patient
+        confidence interval alongside every risk score, so a prediction the model is unsure about
+        looks different from one it is sure about.</p>
+        <p class="venue">Published in <em>American Journal of Neuroradiology</em>, 2026 &middot;
+        <a href="https://doi.org/10.3174/ajnr.A9550">doi:10.3174/ajnr.A9550</a></p>
+      </div>
+    </article>
+
+    <article class="work">
+      <figure>
+        <img src="assets/work-peddx.svg" alt="Schematic of a classifier abstaining on out-of-distribution cases">
+      </figure>
+      <div class="work-body">
+        <h3>Segmentation-Free Differential Diagnosis of Posterior Fossa Tumors</h3>
+        <p>Most imaging pipelines require tumor segmentation, which is slow and rarely available at
+        the point of decision. This model classifies directly from raw pre-operative MRI across 944
+        patients from three institutions, reaching up to 0.95 AUC-ROC and 87% accuracy on external
+        validation. Crucially, it declines to predict on cases that fall outside its training
+        distribution rather than producing a confident wrong answer.</p>
+        <p class="venue">Co-first author &middot; Under review at <em>Neuro-Oncology</em>, 2026</p>
+      </div>
+    </article>
+
+    <article class="work">
+      <figure>
+        <img src="assets/work-reader.svg" alt="Schematic of a multireader study comparing reader accuracy with and without uncertainty">
+      </figure>
+      <div class="work-body">
+        <h3>Does Uncertainty-Aware AI Actually Help Readers?</h3>
+        <p>A model that quantifies its own confidence is only useful if clinicians act on that
+        information. This multireader study evaluates how radiologists&rsquo; diagnostic accuracy
+        changes when they are shown model predictions with and without uncertainty estimates,
+        alongside an evaluation of the deployed workflow at an external site.</p>
+        <p class="venue">Co-first author &middot; In preparation, 2026</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="publications">
+    <h2 class="label">Publications</h2>
+    <p class="note"><sup>&dagger;</sup>&nbsp;Equal contribution.</p>
+    <ol class="pubs">
+      <li>
+        <span class="me">Batal, F.</span>, et al.
+        &ldquo;Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma Using Multimodal
+        Data.&rdquo; <em>American Journal of Neuroradiology</em>, published online July 2026.
+        <a href="https://doi.org/10.3174/ajnr.A9550">doi:10.3174/ajnr.A9550</a>
+      </li>
+      <li>
+        Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
+        &ldquo;Deep Learning for Differential Diagnosis of Pediatric Posterior Fossa Tumors: A
+        Real-World Evaluation with Uncertainty and Out-of-Distribution Analysis.&rdquo;
+        <em>Under review at Neuro-Oncology</em>, 2026.
+      </li>
+      <li>
+        Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
+        &ldquo;Uncertainty-Aware AI Assistance for Pediatric Posterior Fossa Tumor Diagnosis: A
+        Multireader Study and External Workflow Evaluation.&rdquo; <em>In preparation</em>, 2026.
+      </li>
+      <li>
+        Vunnava, B., Lu, M., <span class="me">Batal, F.</span>, Gandhi, D., Familiar, A.,
+        Chrysochoou, D., Storm, P.B., Resnick, A., Vossough, A., Nabavizadeh, A., Fathi Kazerooni, A.
+        &ldquo;Probabilistic Spatial Phenotyping of Pediatric Gliomas in Haskins Atlas Space:
+        Developmental, Molecular, and Surgical Outcome Association.&rdquo;
+        <em>In preparation (npj Digital Surgery)</em>.
+      </li>
+      <li>
+        An, K., <span class="me">Batal, F.</span>, Svyatskaya, S., Nguyen, V.
+        &ldquo;Gene Therapy as a Promising Approach for the Underlying Causes of Autism Spectrum
+        Disorder.&rdquo; <em>Berkeley Pharma Tech Journal of Medicine</em> 3, no. 1 (2023): 10&ndash;25.
+        <a href="https://doi.org/10.52243/bptjm.v1i4.38">doi:10.52243/bptjm.v1i4.38</a>
+      </li>
+    </ol>
+  </section>
+
+  <section id="talks">
+    <h2 class="label">Talks &amp; posters</h2>
+    <ul class="talks">
+      <li>
+        <span class="talk-title">A Segmentation-Free Deep Learning Framework for Pediatric Posterior
+        Fossa Differential Diagnosis.</span>
+        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA &middot; Nov 2026</span>
+      </li>
+      <li>
+        <span class="talk-title">Uncertainty-Aware Multimodal Survival Modeling in Pediatric
+        Low-Grade Glioma.</span>
+        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA &middot; Nov 2026</span>
+      </li>
+      <li>
+        <span class="talk-title">Non-Invasive and End-to-End Prediction of Molecular and Immune
+        Subgroups of Pediatric Low-Grade Gliomas via Transfer Learning.</span>
+        <span class="talk-venue">Oral presentation &middot; RSNA Annual Meeting &middot; Chicago, IL &middot; Nov 2025</span>
+      </li>
+      <li>
+        <span class="talk-title">PADSSY: Peripheral Artery Disease Screening System.</span>
+        <span class="talk-venue">Poster &middot; Northeast Bioengineering Conference (NEBEC) &middot; Apr 2025; Design of Medical Devices (DMD) Conference &middot; Minneapolis, MN &middot; Apr 2025</span>
+      </li>
+      <li>
+        <span class="talk-title">MECP2 Gene Editing for Autism Spectrum Disorder Treatment.</span>
+        <span class="talk-venue">Oral presentation &middot; Berkeley Pharma Tech Virtual Conference &middot; Nov 2022</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="contact">The fastest way to reach me is
+      <a href="mailto:fadelbt@seas.upenn.edu">email</a>.</p>
+    <p class="colophon">Philadelphia, PA &middot; last updated August 2026</p>
+  </footer>
+
+</main>
+</body>
+</html>

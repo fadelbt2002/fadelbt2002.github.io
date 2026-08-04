@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 375" role="img" aria-label="Portrait placeholder">
+  <rect width="300" height="375" fill="#e8e6e1"/>
+  <circle cx="150" cy="150" r="52" fill="#cfccc5"/>
+  <path d="M52 330c0-56 44-96 98-96s98 40 98 96z" fill="#cfccc5"/>
+  <text x="150" y="358" text-anchor="middle" font-family="ui-monospace, Menlo, monospace"
+        font-size="13" fill="#8a8781">assets/portrait.jpg</text>
+</svg>

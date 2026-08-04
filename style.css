@@ -1,0 +1,288 @@
+/* ---------------------------------------------------------------
+   Fadel Batal — personal site
+   Single stylesheet, no dependencies, no build step.
+   Tweak the variables below to restyle the whole page.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg:        #f4f4f2;
+  --ink:       #1a1a1a;
+  --muted:     #6d6d6d;
+  --accent:    #8f1d21;   /* deep crimson, used for links + headings */
+  --accent-bg: #f0e2e2;   /* wash behind the grouped nav pills */
+  --rule:      #d8d6d0;
+
+  --sans: "Helvetica Neue", Helvetica, Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --strip: 44px;          /* width of the decorative left border */
+  --page:  1080px;        /* content column max width */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 0 6rem calc(var(--strip) + 1rem);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(143, 29, 33, 0.35);
+}
+a:hover { border-bottom-color: var(--accent); }
+
+/* --- decorative left strip -------------------------------------
+   A repeating geometric motif drawn entirely in CSS gradients, so
+   there is no image to load. Swap the gradients (or drop in a
+   background-image) to change the pattern.                        */
+.strip {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--strip);
+  z-index: 10;
+  background-color: #7a1417;
+  background-image:
+    linear-gradient(45deg,  #f0e2e2 25%, transparent 25%, transparent 75%, #f0e2e2 75%),
+    linear-gradient(-45deg, #f0e2e2 25%, transparent 25%, transparent 75%, #f0e2e2 75%),
+    linear-gradient(45deg,  #2b2b2b 25%, transparent 25%, transparent 75%, #2b2b2b 75%),
+    linear-gradient(-45deg, #2b2b2b 25%, transparent 25%, transparent 75%, #2b2b2b 75%);
+  background-size: 11px 11px, 11px 11px, 22px 22px, 22px 22px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  border-right: 3px solid #2b2b2b;
+}
+
+/* --- nav -------------------------------------------------------- */
+.nav {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+.nav a {
+  display: inline-block;
+  padding: .38rem 1.05rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: #fbfbfa;
+  color: var(--ink);
+  font-size: .95rem;
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+.nav-group {
+  display: inline-flex;
+  gap: .25rem;
+  padding: .22rem;
+  border-radius: 999px;
+  background: var(--accent-bg);
+}
+.nav-group a {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #6b2326;
+}
+.nav-group a:hover { background: #fbfbfa; }
+
+/* --- hero ------------------------------------------------------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 3rem;
+  align-items: start;
+  margin: 3.5rem 0 2.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+h1 .fn { font-weight: 600; }
+h1 .ln { font-weight: 300; }
+
+.arabic {
+  margin: .25rem 0 .9rem;
+  text-align: left;   /* keep it under the name, not flushed right by dir="rtl" */
+  font-size: clamp(1.8rem, 4.5vw, 2.9rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.affil {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+.email { margin: .2rem 0 0; color: var(--muted); }
+.email a { color: var(--muted); border-bottom-color: rgba(0,0,0,.18); }
+.email a:hover { color: var(--accent); }
+
+.portrait { margin: .5rem 0 0; }
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: #fbfbfa;
+  border: 1px solid var(--accent);
+}
+.portrait figcaption {
+  margin-top: .85rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: .9rem;
+  color: var(--accent);
+}
+
+/* --- body sections ---------------------------------------------- */
+section { margin: 0 0 3.25rem; }
+
+.intro, .outside { max-width: 46rem; }
+.intro p, .outside p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.greeting {
+  margin: 0 0 1.2rem;
+  color: var(--accent);
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.label {
+  margin: 3.5rem 0 1.4rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* --- selected work ---------------------------------------------- */
+.work {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+  margin: 2.5rem 0 3rem;
+}
+.work figure { margin: 0; }
+.work figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  background: #fbfbfa;
+  border: 1px solid var(--rule);
+}
+.work h3 {
+  margin: 0 0 .7rem;
+  font-size: 1.32rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.work p { margin: 0 0 .8rem; text-align: justify; hyphens: auto; }
+.venue {
+  font-family: var(--mono);
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.venue em { font-style: normal; color: var(--ink); }
+
+/* --- publications ------------------------------------------------ */
+.note { margin: -.4rem 0 1.2rem; font-size: .9rem; color: var(--muted); }
+
+.pubs {
+  max-width: 52rem;
+  margin: 0;
+  padding-left: 1.4rem;
+}
+.pubs li { margin-bottom: 1.15rem; }
+.pubs .me { font-weight: 600; }
+.pubs sup { color: var(--accent); }
+
+/* --- talks -------------------------------------------------------- */
+.talks {
+  max-width: 52rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.talks li {
+  margin-bottom: 1.15rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+}
+.talk-title { display: block; }
+.talk-venue {
+  display: block;
+  font-family: var(--mono);
+  font-size: .82rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* --- footer ------------------------------------------------------- */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+.contact { margin: 0 0 .3rem; }
+.colophon {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* --- responsive ---------------------------------------------------- */
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .portrait { max-width: 260px; }
+  .work { grid-template-columns: 1fr; gap: 1.25rem; }
+  .work figure { max-width: 320px; }
+}
+
+@media (max-width: 640px) {
+  :root { --strip: 20px; }
+  body { font-size: 16px; padding-left: calc(var(--strip) + .25rem); }
+  main, .nav { padding-left: 1rem; padding-right: 1rem; }
+  .nav { justify-content: flex-start; }
+  .intro p, .outside p, .work p { text-align: left; }
+}
+
+@media print {
+  .strip, .nav { display: none; }
+  body { padding: 0; background: #fff; }
+  a { color: var(--ink); border: 0; }
+}

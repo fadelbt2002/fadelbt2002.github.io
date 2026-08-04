@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img"
+     aria-label="Per-patient risk scores shown with confidence intervals">
+  <rect width="320" height="220" fill="#fbfbfa"/>
+  <!-- axes -->
+  <line x1="34" y1="24" x2="34" y2="186" stroke="#c9c6bf" stroke-width="1.5"/>
+  <line x1="34" y1="186" x2="292" y2="186" stroke="#c9c6bf" stroke-width="1.5"/>
+  <!-- point estimates with intervals: tight for some, wide for others -->
+  <g stroke="#8f1d21" stroke-width="2" stroke-linecap="round">
+    <line x1="62"  y1="56"  x2="62"  y2="84"/>
+    <line x1="94"  y1="72"  x2="94"  y2="92"/>
+    <line x1="126" y1="48"  x2="126" y2="128"/>
+    <line x1="158" y1="96"  x2="158" y2="118"/>
+    <line x1="190" y1="70"  x2="190" y2="152"/>
+    <line x1="222" y1="118" x2="222" y2="140"/>
+    <line x1="254" y1="86"  x2="254" y2="164"/>
+  </g>
+  <g fill="#8f1d21">
+    <circle cx="62"  cy="70"  r="4"/>
+    <circle cx="94"  cy="82"  r="4"/>
+    <circle cx="126" cy="88"  r="4"/>
+    <circle cx="158" cy="107" r="4"/>
+    <circle cx="190" cy="111" r="4"/>
+    <circle cx="222" cy="129" r="4"/>
+    <circle cx="254" cy="125" r="4"/>
+  </g>
+  <text x="34" y="208" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#8a8781">
+    patients, ordered by predicted risk
+  </text>
+  <text x="18" y="20" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#8a8781">risk</text>
+</svg>
