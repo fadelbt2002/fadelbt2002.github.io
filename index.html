@@ -35,8 +35,9 @@
     <div class="hero-text">
       <p class="eyebrow"><span class="dot"></span> Philadelphia, PA &nbsp;/&nbsp; applying for PhD programs, Fall 2027</p>
       <h1><span class="fn">Fadel</span><span class="ln">Batal</span></h1>
-      <p class="affil">Imaging AI &middot; Children&rsquo;s Hospital of Philadelphia</p>
-      <p class="tagline">Building clinical models that know when they don&rsquo;t know.</p>
+      <p class="affil">Research Data Analyst &middot; Children&rsquo;s Hospital of Philadelphia</p>
+      <p class="tagline">Computer vision and deep learning for medical imaging, with a focus on
+      pediatric neuro-oncology.</p>
       <p class="hero-links">
         <a href="mailto:fadelbt@seas.upenn.edu">fadelbt@seas.upenn.edu</a>
       </p>
@@ -47,36 +48,32 @@
         <img src="assets/portrait.jpg" alt="Portrait of Fadel Batal"
              onerror="this.onerror=null;this.src='assets/portrait-placeholder.svg';">
       </figure>
-      <dl class="stats">
-        <div><dt>C-index</dt><dd>0.79</dd></div>
-        <div><dt>AUC-ROC</dt><dd>0.95</dd></div>
-        <div><dt>Patients</dt><dd>944</dd></div>
-        <div><dt>Sites</dt><dd>3</dd></div>
-      </dl>
     </div>
   </header>
 
   <section class="intro reveal">
-    <p class="lead">A model that is accurate on average can still fail badly on the patient in
-    front of you. I build imaging models for pediatric brain tumors that report how much to
-    trust them.</p>
+    <p class="lead">My research develops computer vision and deep learning methods for medical
+    image analysis, with an emphasis on diagnosis and prognosis in pediatric neuro-oncology.</p>
 
     <p>I am a research data analyst at the <a href="https://d3b.center/">Center for Data-Driven
     Discovery in Biomedicine</a> at Children&rsquo;s Hospital of Philadelphia, working with
-    <a href="https://www.chop.edu/doctors/fathi-kazerooni-anahita">Anahita Fathi Kazerooni</a> on
-    survival modeling and differential diagnosis from MRI. Clinical imaging models are usually
-    evaluated on how often they are right; I am more interested in whether they know when they are
-    wrong. My work builds risk stratification and diagnostic models that quantify their own
-    confidence, flag out-of-distribution cases, and abstain rather than guess &mdash; and then tests
-    whether clinicians actually use that information.</p>
+    <a href="https://www.chop.edu/doctors/fathi-kazerooni-anahita">Dr. Anahita Fathi Kazerooni</a>.
+    My work spans multimodal survival modeling in pediatric low-grade glioma, segmentation-free
+    differential diagnosis of posterior fossa tumors across multiple institutions, and multireader
+    studies of how radiologists incorporate model output into diagnostic decisions. A methodological
+    thread runs through all of it: quantifying predictive uncertainty, detecting out-of-distribution
+    inputs, and allowing a model to abstain instead of returning an unreliable prediction.</p>
 
-    <p>I hold a BSE and an MSE in Bioengineering from the <a href="https://be.seas.upenn.edu/">University
-    of Pennsylvania</a>, where my master&rsquo;s thesis on segmentation-free molecular subtyping of
-    pediatric low-grade glioma became an oral presentation at RSNA 2025. Before that I worked in the
-    <a href="https://www.shorterlab.com/">Shorter Lab</a> at the Perelman School of Medicine on
-    protein misfolding under oxidative stress. Outside the lab, I mentor Syrian students applying to
-    universities abroad through <a href="https://syrianyouthempowerment.org/">Syrian Youth
-    Empowerment</a>.</p>
+    <p>I hold BSE and MSE degrees in Bioengineering from the <a href="https://be.seas.upenn.edu/">University
+    of Pennsylvania</a>. My master&rsquo;s thesis, on non-invasive and segmentation-free prediction of
+    molecular subtypes in pediatric low-grade glioma, was selected for oral presentation at RSNA 2025.
+    Before that I studied protein misfolding under oxidative stress in the
+    <a href="https://www.shorterlab.com/">Shorter Lab</a> at the Perelman School of Medicine.</p>
+
+    <p>I am applying to PhD programs for Fall 2027. My interests are medical image analysis,
+    multimodal and self-supervised representation learning, and reliable machine learning for
+    clinical deployment. Outside of research, I mentor Syrian students applying to universities
+    abroad through <a href="https://syrianyouthempowerment.org/">Syrian Youth Empowerment</a>.</p>
   </section>
 
   <section id="research" class="reveal">
@@ -125,11 +122,11 @@
         <img src="assets/work-reader.svg" alt="Reader accuracy compared with and without uncertainty estimates">
       </figure>
       <div class="work-body">
-        <h3>Does Uncertainty-Aware AI Actually Help Readers?</h3>
-        <p>A model that quantifies its own confidence is only useful if clinicians act on that
-        information. This multireader study evaluates how radiologists&rsquo; diagnostic accuracy
-        changes when they are shown model predictions with and without uncertainty estimates,
-        alongside an evaluation of the deployed workflow at an external site.</p>
+        <h3>Uncertainty-Aware AI Assistance: A Multireader Study</h3>
+        <p>Confidence estimates are only clinically meaningful if readers act on them. This
+        multireader study measures how radiologists&rsquo; diagnostic accuracy changes when they are
+        shown model predictions with and without accompanying uncertainty estimates, together with
+        an evaluation of the deployed workflow at an external site.</p>
         <p class="venue">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026

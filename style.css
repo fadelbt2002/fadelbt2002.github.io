@@ -227,7 +227,7 @@ h1 .ln {
 }
 .tagline {
   margin: 1.1rem 0 0;
-  max-width: 30ch;
+  max-width: 34ch;
   font-size: clamp(1.15rem, 2.1vw, 1.45rem);
   line-height: 1.35;
   color: var(--ink);
@@ -245,38 +245,6 @@ h1 .ln {
   border-radius: var(--r);
   border: 1px solid var(--line);
   background: var(--panel);
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  margin: 0;
-  padding: 1px;
-  border-radius: var(--r);
-  background: var(--line-soft);
-  overflow: hidden;
-}
-.stats > div {
-  padding: .85rem .95rem;
-  background: #0a0c12;
-}
-.stats dt {
-  font-family: var(--mono);
-  font-size: .66rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.stats dd {
-  margin: .15rem 0 0;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  background: var(--grad);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
 }
 
 /* --- body --------------------------------------------------------- */
@@ -482,5 +450,5 @@ footer {
   body { background: #fff; color: #000; padding: 0; }
   .reveal { opacity: 1; transform: none; }
   a { color: #000; }
-  h1 .ln, .stats dd, .label span { -webkit-text-fill-color: #000; color: #000; }
+  h1 .ln, .label span { -webkit-text-fill-color: #000; color: #000; }
 }
