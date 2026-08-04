@@ -1,30 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 230" role="img"
      aria-label="Per-patient risk scores shown with confidence intervals">
-  <rect width="320" height="220" fill="#fbfbfa"/>
-  <!-- axes -->
-  <line x1="34" y1="24" x2="34" y2="186" stroke="#c9c6bf" stroke-width="1.5"/>
-  <line x1="34" y1="186" x2="292" y2="186" stroke="#c9c6bf" stroke-width="1.5"/>
-  <!-- point estimates with intervals: tight for some, wide for others -->
-  <g stroke="#8f1d21" stroke-width="2" stroke-linecap="round">
-    <line x1="62"  y1="56"  x2="62"  y2="84"/>
-    <line x1="94"  y1="72"  x2="94"  y2="92"/>
-    <line x1="126" y1="48"  x2="126" y2="128"/>
-    <line x1="158" y1="96"  x2="158" y2="118"/>
-    <line x1="190" y1="70"  x2="190" y2="152"/>
-    <line x1="222" y1="118" x2="222" y2="140"/>
-    <line x1="254" y1="86"  x2="254" y2="164"/>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5ee7ff"/>
+      <stop offset="1" stop-color="#a98bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="340" height="230" fill="#0a0c12"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 40h340M0 80h340M0 120h340M0 160h340"/>
   </g>
-  <g fill="#8f1d21">
-    <circle cx="62"  cy="70"  r="4"/>
-    <circle cx="94"  cy="82"  r="4"/>
-    <circle cx="126" cy="88"  r="4"/>
-    <circle cx="158" cy="107" r="4"/>
-    <circle cx="190" cy="111" r="4"/>
-    <circle cx="222" cy="129" r="4"/>
-    <circle cx="254" cy="125" r="4"/>
+  <line x1="40" y1="26" x2="40" y2="190" stroke="#ffffff" stroke-opacity="0.16"/>
+  <line x1="40" y1="190" x2="312" y2="190" stroke="#ffffff" stroke-opacity="0.16"/>
+  <!-- confidence intervals: some tight, some wide -->
+  <g stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" opacity="0.75">
+    <line x1="70"  y1="56"  x2="70"  y2="86"/>
+    <line x1="104" y1="74"  x2="104" y2="96"/>
+    <line x1="138" y1="46"  x2="138" y2="132"/>
+    <line x1="172" y1="100" x2="172" y2="122"/>
+    <line x1="206" y1="70"  x2="206" y2="158"/>
+    <line x1="240" y1="122" x2="240" y2="146"/>
+    <line x1="274" y1="88"  x2="274" y2="170"/>
   </g>
-  <text x="34" y="208" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#8a8781">
-    patients, ordered by predicted risk
-  </text>
-  <text x="18" y="20" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#8a8781">risk</text>
+  <g fill="#5ee7ff">
+    <circle cx="70"  cy="71"  r="4.2"/>
+    <circle cx="104" cy="85"  r="4.2"/>
+    <circle cx="138" cy="89"  r="4.2"/>
+    <circle cx="172" cy="111" r="4.2"/>
+    <circle cx="206" cy="114" r="4.2"/>
+    <circle cx="240" cy="134" r="4.2"/>
+    <circle cx="274" cy="129" r="4.2"/>
+  </g>
+  <text x="40" y="214" font-family="ui-monospace, Menlo, monospace" font-size="10"
+        fill="#67718a" letter-spacing="1">patients, ordered by predicted risk</text>
+  <text x="14" y="22" font-family="ui-monospace, Menlo, monospace" font-size="10"
+        fill="#67718a" letter-spacing="1">risk</text>
 </svg>

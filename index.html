@@ -4,21 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fadel Batal</title>
-<meta name="description" content="Fadel Batal — imaging AI research at the Center for Data-Driven Discovery in Biomedicine, Children's Hospital of Philadelphia. Uncertainty quantification, out-of-distribution detection, and abstention in clinical imaging models.">
+<meta name="description" content="Fadel Batal — imaging AI research at Children's Hospital of Philadelphia. Building clinical models that know when they don't know: uncertainty quantification, out-of-distribution detection, and abstention.">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ف</text></svg>">
+<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0b10'/><path d='M9 22V10h13M9 16h9' stroke='%236ee7ff' stroke-width='2.6' fill='none' stroke-linecap='round'/></svg>">
 </head>
 <body>
 
-<!-- Decorative left border strip -->
-<div class="strip" aria-hidden="true"></div>
+<!-- ambient background layers -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-a" aria-hidden="true"></div>
+<div class="bg-glow bg-glow-b" aria-hidden="true"></div>
+<div class="bg-noise" aria-hidden="true"></div>
 
 <nav class="nav">
-  <a href="assets/Batal_Fadel_CV.pdf">CV</a>
-  <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-  <a href="https://github.com/fadelbt2002">GitHub</a>
-  <a href="https://www.linkedin.com/in/fadelbatal">LinkedIn</a>
-  <span class="nav-group">
+  <a class="pill" href="assets/Batal_Fadel_CV.pdf">CV</a>
+  <a class="pill" href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+  <a class="pill" href="https://github.com/fadelbt2002">GitHub</a>
+  <a class="pill" href="https://www.linkedin.com/in/fadelbatal">LinkedIn</a>
+  <span class="pill-group">
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#talks">Talks</a>
@@ -27,25 +31,35 @@
 
 <main>
 
-  <header class="hero">
+  <header class="hero reveal">
     <div class="hero-text">
-      <h1><span class="fn">Fadel</span> <span class="ln">Batal</span></h1>
-      <p class="arabic" dir="rtl">فاضل بطل</p>
-      <p class="affil">Children&rsquo;s Hospital of Philadelphia &middot; University of Pennsylvania.</p>
-      <p class="email"><a href="mailto:fadelbt@seas.upenn.edu">fadelbt@seas.upenn.edu</a></p>
+      <p class="eyebrow"><span class="dot"></span> Philadelphia, PA &nbsp;/&nbsp; applying for PhD programs, Fall 2027</p>
+      <h1><span class="fn">Fadel</span><span class="ln">Batal</span></h1>
+      <p class="affil">Imaging AI &middot; Children&rsquo;s Hospital of Philadelphia</p>
+      <p class="tagline">Building clinical models that know when they don&rsquo;t know.</p>
+      <p class="hero-links">
+        <a href="mailto:fadelbt@seas.upenn.edu">fadelbt@seas.upenn.edu</a>
+      </p>
     </div>
-    <figure class="portrait">
-      <img src="assets/portrait.jpg" alt="Portrait of Fadel Batal"
-           onerror="this.onerror=null;this.src='assets/portrait-placeholder.svg';">
-      <figcaption>Philadelphia, Pennsylvania</figcaption>
-    </figure>
+
+    <div class="hero-side">
+      <figure class="portrait">
+        <img src="assets/portrait.jpg" alt="Portrait of Fadel Batal"
+             onerror="this.onerror=null;this.src='assets/portrait-placeholder.svg';">
+      </figure>
+      <dl class="stats">
+        <div><dt>C-index</dt><dd>0.79</dd></div>
+        <div><dt>AUC-ROC</dt><dd>0.95</dd></div>
+        <div><dt>Patients</dt><dd>944</dd></div>
+        <div><dt>Sites</dt><dd>3</dd></div>
+      </dl>
+    </div>
   </header>
 
-  <section class="intro">
-    <h2 class="greeting">Marhaba <span dir="ltr">(<span dir="rtl">مرحباً</span>)</span>!</h2>
-
-    <p>A model that is accurate on average can still fail badly on the patient in front of
-    you. I build imaging models for pediatric brain tumors that report how much to trust them.</p>
+  <section class="intro reveal">
+    <p class="lead">A model that is accurate on average can still fail badly on the patient in
+    front of you. I build imaging models for pediatric brain tumors that report how much to
+    trust them.</p>
 
     <p>I am a research data analyst at the <a href="https://d3b.center/">Center for Data-Driven
     Discovery in Biomedicine</a> at Children&rsquo;s Hospital of Philadelphia, working with
@@ -53,32 +67,24 @@
     survival modeling and differential diagnosis from MRI. Clinical imaging models are usually
     evaluated on how often they are right; I am more interested in whether they know when they are
     wrong. My work builds risk stratification and diagnostic models that quantify their own
-    confidence, flag out-of-distribution cases, and abstain rather than guess &mdash; and then
-    tests whether clinicians actually use that information.</p>
+    confidence, flag out-of-distribution cases, and abstain rather than guess &mdash; and then tests
+    whether clinicians actually use that information.</p>
 
     <p>I hold a BSE and an MSE in Bioengineering from the <a href="https://be.seas.upenn.edu/">University
     of Pennsylvania</a>, where my master&rsquo;s thesis on segmentation-free molecular subtyping of
     pediatric low-grade glioma became an oral presentation at RSNA 2025. Before that I worked in the
     <a href="https://www.shorterlab.com/">Shorter Lab</a> at the Perelman School of Medicine on
-    protein misfolding under oxidative stress.</p>
-
-    <p>I am originally from Syria, and I am looking to start a PhD in 2027.</p>
+    protein misfolding under oxidative stress. Outside the lab, I mentor Syrian students applying to
+    universities abroad through <a href="https://syrianyouthempowerment.org/">Syrian Youth
+    Empowerment</a>.</p>
   </section>
 
-  <section class="outside">
-    <h2 class="label">Outside of work</h2>
-    <p>I mentor Syrian high school students applying to universities abroad through
-    <a href="https://syrianyouthempowerment.org/">Syrian Youth Empowerment</a>, which I have been
-    doing since 2022. Otherwise: long walks around Philadelphia, chemistry problems for their own
-    sake, and an ongoing argument with myself about how much coffee is too much.</p>
-  </section>
-
-  <section id="research">
-    <h2 class="label">Selected work</h2>
+  <section id="research" class="reveal">
+    <h2 class="label"><span>01</span> Selected work</h2>
 
     <article class="work">
       <figure>
-        <img src="assets/work-lgg.svg" alt="Schematic of per-patient risk scores with confidence intervals">
+        <img src="assets/work-lgg.svg" alt="Per-patient risk scores drawn with confidence intervals">
       </figure>
       <div class="work-body">
         <h3>Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma</h3>
@@ -88,14 +94,17 @@
         Brain Tumor Network, reaching a C-index up to 0.79 &mdash; and reports a per-patient
         confidence interval alongside every risk score, so a prediction the model is unsure about
         looks different from one it is sure about.</p>
-        <p class="venue">Published in <em>American Journal of Neuroradiology</em>, 2026 &middot;
-        <a href="https://doi.org/10.3174/ajnr.A9550">doi:10.3174/ajnr.A9550</a></p>
+        <p class="venue">
+          <span class="tag tag-live">Published</span>
+          <em>American Journal of Neuroradiology</em>, 2026 &middot;
+          <a href="https://doi.org/10.3174/ajnr.A9550">doi:10.3174/ajnr.A9550</a>
+        </p>
       </div>
     </article>
 
     <article class="work">
       <figure>
-        <img src="assets/work-peddx.svg" alt="Schematic of a classifier abstaining on out-of-distribution cases">
+        <img src="assets/work-peddx.svg" alt="A classifier abstaining on out-of-distribution cases">
       </figure>
       <div class="work-body">
         <h3>Segmentation-Free Differential Diagnosis of Posterior Fossa Tumors</h3>
@@ -104,13 +113,16 @@
         patients from three institutions, reaching up to 0.95 AUC-ROC and 87% accuracy on external
         validation. Crucially, it declines to predict on cases that fall outside its training
         distribution rather than producing a confident wrong answer.</p>
-        <p class="venue">Co-first author &middot; Under review at <em>Neuro-Oncology</em>, 2026</p>
+        <p class="venue">
+          <span class="tag">Under review</span>
+          Co-first author &middot; <em>Neuro-Oncology</em>, 2026
+        </p>
       </div>
     </article>
 
     <article class="work">
       <figure>
-        <img src="assets/work-reader.svg" alt="Schematic of a multireader study comparing reader accuracy with and without uncertainty">
+        <img src="assets/work-reader.svg" alt="Reader accuracy compared with and without uncertainty estimates">
       </figure>
       <div class="work-body">
         <h3>Does Uncertainty-Aware AI Actually Help Readers?</h3>
@@ -118,13 +130,16 @@
         information. This multireader study evaluates how radiologists&rsquo; diagnostic accuracy
         changes when they are shown model predictions with and without uncertainty estimates,
         alongside an evaluation of the deployed workflow at an external site.</p>
-        <p class="venue">Co-first author &middot; In preparation, 2026</p>
+        <p class="venue">
+          <span class="tag">In preparation</span>
+          Co-first author &middot; 2026
+        </p>
       </div>
     </article>
   </section>
 
-  <section id="publications">
-    <h2 class="label">Publications</h2>
+  <section id="publications" class="reveal">
+    <h2 class="label"><span>02</span> Publications</h2>
     <p class="note"><sup>&dagger;</sup>&nbsp;Equal contribution.</p>
     <ol class="pubs">
       <li>
@@ -160,41 +175,68 @@
     </ol>
   </section>
 
-  <section id="talks">
-    <h2 class="label">Talks &amp; posters</h2>
+  <section id="talks" class="reveal">
+    <h2 class="label"><span>03</span> Talks &amp; posters</h2>
     <ul class="talks">
       <li>
+        <span class="talk-year">2026</span>
         <span class="talk-title">A Segmentation-Free Deep Learning Framework for Pediatric Posterior
         Fossa Differential Diagnosis.</span>
-        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA &middot; Nov 2026</span>
+        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA</span>
       </li>
       <li>
+        <span class="talk-year">2026</span>
         <span class="talk-title">Uncertainty-Aware Multimodal Survival Modeling in Pediatric
         Low-Grade Glioma.</span>
-        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA &middot; Nov 2026</span>
+        <span class="talk-venue">Society for Neuro-Oncology (SNO) Annual Meeting &middot; Philadelphia, PA</span>
       </li>
       <li>
+        <span class="talk-year">2025</span>
         <span class="talk-title">Non-Invasive and End-to-End Prediction of Molecular and Immune
         Subgroups of Pediatric Low-Grade Gliomas via Transfer Learning.</span>
-        <span class="talk-venue">Oral presentation &middot; RSNA Annual Meeting &middot; Chicago, IL &middot; Nov 2025</span>
+        <span class="talk-venue">Oral presentation &middot; RSNA Annual Meeting &middot; Chicago, IL</span>
       </li>
       <li>
+        <span class="talk-year">2025</span>
         <span class="talk-title">PADSSY: Peripheral Artery Disease Screening System.</span>
-        <span class="talk-venue">Poster &middot; Northeast Bioengineering Conference (NEBEC) &middot; Apr 2025; Design of Medical Devices (DMD) Conference &middot; Minneapolis, MN &middot; Apr 2025</span>
+        <span class="talk-venue">Poster &middot; NEBEC; Design of Medical Devices Conference &middot; Minneapolis, MN</span>
       </li>
       <li>
+        <span class="talk-year">2022</span>
         <span class="talk-title">MECP2 Gene Editing for Autism Spectrum Disorder Treatment.</span>
-        <span class="talk-venue">Oral presentation &middot; Berkeley Pharma Tech Virtual Conference &middot; Nov 2022</span>
+        <span class="talk-venue">Oral presentation &middot; Berkeley Pharma Tech Virtual Conference</span>
       </li>
     </ul>
   </section>
 
-  <footer>
+  <footer class="reveal">
     <p class="contact">The fastest way to reach me is
       <a href="mailto:fadelbt@seas.upenn.edu">email</a>.</p>
-    <p class="colophon">Philadelphia, PA &middot; last updated August 2026</p>
+    <p class="colophon">Philadelphia, PA &mdash; last updated August 2026</p>
   </footer>
 
 </main>
+
+<script>
+  // Fade sections in as they enter the viewport. No-ops if the user prefers reduced motion.
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
 </body>
 </html>

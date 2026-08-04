@@ -1,23 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 230" role="img"
      aria-label="Reader accuracy compared across unaided, AI-assisted, and uncertainty-aware AI-assisted arms">
-  <rect width="320" height="220" fill="#fbfbfa"/>
-  <line x1="46" y1="24" x2="46" y2="170" stroke="#c9c6bf" stroke-width="1.5"/>
-  <line x1="46" y1="170" x2="296" y2="170" stroke="#c9c6bf" stroke-width="1.5"/>
-  <!-- three arms -->
-  <rect x="74"  y="112" width="52" height="58"  fill="#d9d5ce"/>
-  <rect x="146" y="84"  width="52" height="86"  fill="#c2777a"/>
-  <rect x="218" y="52"  width="52" height="118" fill="#8f1d21"/>
-  <!-- reader-level scatter over each bar -->
-  <g fill="#2b2b2b" opacity="0.55">
-    <circle cx="88"  cy="120" r="2.5"/><circle cx="104" cy="106" r="2.5"/><circle cx="116" cy="126" r="2.5"/>
-    <circle cx="160" cy="92"  r="2.5"/><circle cx="176" cy="76"  r="2.5"/><circle cx="188" cy="98"  r="2.5"/>
-    <circle cx="232" cy="60"  r="2.5"/><circle cx="248" cy="44"  r="2.5"/><circle cx="260" cy="66"  r="2.5"/>
+  <defs>
+    <linearGradient id="b1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5ee7ff" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#5ee7ff" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#a98bff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#a98bff" stop-opacity=".85"/>
+    </linearGradient>
+  </defs>
+  <rect width="340" height="230" fill="#0a0c12"/>
+  <g stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M0 44h340M0 84h340M0 124h340M0 164h340"/>
   </g>
-  <g font-family="ui-monospace, Menlo, monospace" font-size="9" fill="#8a8781" text-anchor="middle">
-    <text x="100" y="186">unaided</text>
-    <text x="172" y="186">+ AI</text>
-    <text x="244" y="186">+ AI</text>
-    <text x="244" y="198">+ uncertainty</text>
+  <line x1="52" y1="24" x2="52" y2="176" stroke="#ffffff" stroke-opacity="0.16"/>
+  <line x1="52" y1="176" x2="312" y2="176" stroke="#ffffff" stroke-opacity="0.16"/>
+  <rect x="82"  y="116" width="56" height="60"  rx="3" fill="#ffffff" fill-opacity="0.12"/>
+  <rect x="158" y="88"  width="56" height="88"  rx="3" fill="url(#b1)"/>
+  <rect x="234" y="54"  width="56" height="122" rx="3" fill="url(#b2)"/>
+  <!-- per-reader points -->
+  <g fill="#e9edf5" opacity="0.6">
+    <circle cx="96"  cy="124" r="2.6"/><circle cx="112" cy="110" r="2.6"/><circle cx="126" cy="130" r="2.6"/>
+    <circle cx="172" cy="96"  r="2.6"/><circle cx="188" cy="80"  r="2.6"/><circle cx="202" cy="102" r="2.6"/>
+    <circle cx="248" cy="62"  r="2.6"/><circle cx="264" cy="46"  r="2.6"/><circle cx="278" cy="70"  r="2.6"/>
   </g>
-  <text x="14" y="20" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#8a8781">accuracy</text>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="9.5" fill="#67718a" text-anchor="middle">
+    <text x="110" y="194">unaided</text>
+    <text x="186" y="194">+ AI</text>
+    <text x="262" y="194">+ AI</text>
+    <text x="262" y="207">+ uncertainty</text>
+  </g>
+  <text x="14" y="22" font-family="ui-monospace, Menlo, monospace" font-size="10"
+        fill="#67718a" letter-spacing="1">reader accuracy</text>
 </svg>
