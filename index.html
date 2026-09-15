@@ -26,6 +26,7 @@
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
     <a href="#talks">Talks</a>
+    <a href="#skills">Skills</a>
   </span>
 </nav>
 
@@ -128,7 +129,7 @@
         <img src="assets/work-peddx.svg" alt="Schematic: a classifier abstaining on out-of-distribution cases">
       </figure>
       <div class="work-body">
-        <h3>Segmentation-Free Differential Diagnosis of Pediatric Posterior Fossa Tumors</h3>
+        <h3>PedDx: Segmentation-Free Differential Diagnosis of Pediatric Posterior Fossa Tumors</h3>
         <p>Posterior fossa tumors are the largest category of childhood brain tumors. The major
         entities are medulloblastoma, ependymoma, atypical teratoid/rhabdoid tumor, low-grade
         glioma, and diffuse midline glioma. They share an anatomical compartment but differ in
@@ -149,9 +150,19 @@
         posterior fossa, as well as biological shifts from rare histologies withheld from training.
         These are the conditions usually excluded from curated test sets and unavoidable in
         deployment.</p>
+        <p>Around the locked model sits an agentic layer that treats safety as a property of the
+        workflow rather than of the model. It defines an intended-use boundary and enforces it in
+        stages: input and metadata validation, technical quality control, verification of
+        preprocessing, anatomical localization, inference, then uncertainty and out-of-distribution
+        assessment. Each case ends in one of four dispositions, which are release, release with
+        caution, retry, and abstain and escalate, each with a recorded rationale. Orchestration is
+        kept separate from interpretation, so the diagnostic decision stays grounded in locked
+        quantitative tools rather than unconstrained language-model inference. A collaborating team
+        in Australia ran the framework independently on their own cases, reaching 81% accuracy
+        across histologies.</p>
         <p class="venue">
-          <span class="tag">Under review</span>
-          Co-first author &middot; <em>Neuro-Oncology</em>, 2026
+          <span class="tag">In preparation</span>
+          Co-first author &middot; 2026
         </p>
       </div>
     </article>
@@ -161,24 +172,17 @@
         <img src="assets/work-reader.svg" alt="Schematic: reader accuracy compared with and without uncertainty estimates">
       </figure>
       <div class="work-body">
-        <h3>Uncertainty-Aware AI Assistance: A Multireader Study and External Workflow Evaluation</h3>
+        <h3>Uncertainty-Aware AI Assistance: A Multireader Study</h3>
         <p>Showing that a diagnostic model is accurate is not the same as showing that it helps.
-        Two questions remain once a model is locked. The first is whether access to its output, and
-        to the uncertainty attached to that output, changes what a radiologist concludes. The second
-        is whether the surrounding system can be operated safely somewhere it was not built. This
-        study pairs a multireader experiment, in which neuroradiologists diagnose the same posterior
-        fossa cases before and after seeing model output, with an external deployment at a
-        collaborating institution abroad.</p>
-        <p>The deployment arm treats safety as a property of the workflow rather than of the model.
-        An auditable orchestration layer defines an intended-use boundary and enforces it in stages:
-        input and metadata validation, technical quality control, verification of preprocessing,
-        anatomical localization, inference under the locked model, then uncertainty and
-        out-of-distribution assessment. Each case ends in one of four dispositions, which are
-        release, release with caution, retry, and abstain and escalate, each with a recorded
-        rationale. Orchestration is kept separate from interpretation, so the diagnostic decision
-        stays grounded in locked quantitative tools rather than unconstrained language-model
-        inference. The evaluation asks whether in-distribution gains survive contact with a real
-        case mix that includes studies the model should decline.</p>
+        The question left open once a model is locked is whether access to its output, and to the
+        uncertainty attached to that output, changes what a radiologist concludes. A model can be
+        right and ignored, or wrong and persuasive, and neither shows up in a performance table.</p>
+        <p>This study is a paired experiment in which neuroradiologists diagnose the same posterior
+        fossa cases before and after seeing model output, so each reader serves as their own
+        control. It measures not only whether accuracy moves but under what conditions assistance
+        helps and under what conditions it hurts, including whether readers defer to confident
+        errors and whether an explicit uncertainty estimate changes how much weight they give the
+        prediction.</p>
         <p class="venue">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
@@ -220,21 +224,20 @@
       </li>
       <li>
         Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
-        &ldquo;Deep Learning for Differential Diagnosis of Pediatric Posterior Fossa Tumors: A
-        Real-World Evaluation with Uncertainty and Out-of-Distribution Analysis.&rdquo;
-        <em>Under review at Neuro-Oncology</em>, 2026.
+        &ldquo;PedDx: An Uncertainty-Aware Deep Learning Framework for Pediatric Posterior Fossa
+        Tumor Diagnosis With Agentic AI-Enabled Independent External Evaluation.&rdquo;
+        <em>In preparation</em>, 2026.
       </li>
       <li>
         Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
         &ldquo;Uncertainty-Aware AI Assistance for Pediatric Posterior Fossa Tumor Diagnosis: A
-        Multireader Study and External Workflow Evaluation.&rdquo; <em>In preparation</em>, 2026.
+        Multireader Study.&rdquo; <em>In preparation</em>, 2026.
       </li>
       <li>
         Vunnava, B., Lu, M., <span class="me">Batal, F.</span>, Gandhi, D., Familiar, A.,
         Chrysochoou, D., Storm, P.B., Resnick, A., Vossough, A., Nabavizadeh, A., Fathi Kazerooni, A.
-        &ldquo;Probabilistic Spatial Phenotyping of Pediatric Gliomas in Haskins Atlas Space:
-        Developmental, Molecular, and Surgical Outcome Association.&rdquo;
-        <em>In preparation (npj Digital Surgery)</em>.
+        &ldquo;Atlas-Based MRI Spatial Phenotyping in Pediatric Low-Grade Glioma.&rdquo;
+        <em>In preparation</em>, 2026.
       </li>
       <li>
         An, K., <span class="me">Batal, F.</span>, Svyatskaya, S., Nguyen, V.
@@ -290,11 +293,42 @@
     </ul>
   </section>
 
+  <section id="skills" class="reveal">
+    <h2 class="label"><span>04</span> Technical skills</h2>
+    <dl class="skills">
+      <div class="skill">
+        <dt>Languages</dt>
+        <dd>Python &middot; SQL &middot; MATLAB</dd>
+      </div>
+      <div class="skill">
+        <dt>Deep learning &amp; computer vision</dt>
+        <dd>PyTorch &middot; TensorFlow &middot; scikit-learn &middot; OpenCV</dd>
+      </div>
+      <div class="skill">
+        <dt>Medical imaging</dt>
+        <dd>nibabel &middot; ITK &middot; DICOM and NIfTI pipelines &middot; image registration &middot;
+        tumor segmentation &middot; Flywheel</dd>
+      </div>
+      <div class="skill">
+        <dt>NLP &amp; agentic AI</dt>
+        <dd>Transformers &middot; LLM-based decision support</dd>
+      </div>
+      <div class="skill">
+        <dt>Data analysis</dt>
+        <dd>pandas &middot; NumPy &middot; Matplotlib &middot; seaborn</dd>
+      </div>
+      <div class="skill">
+        <dt>Software &amp; infrastructure</dt>
+        <dd>FastAPI &middot; Streamlit &middot; Docker &middot; Git &middot; Linux &middot; Slurm</dd>
+      </div>
+    </dl>
+  </section>
+
   <footer class="reveal">
     <p class="contact">The fastest way to reach me is email:
       <a href="mailto:batalf@chop.edu">batalf@chop.edu</a> or
       <a href="mailto:fadel.batal4@gmail.com">fadel.batal4@gmail.com</a>.</p>
-    <p class="colophon">Philadelphia, PA &middot; last updated August 2026</p>
+    <p class="colophon">Philadelphia, PA &middot; last updated September 2026</p>
   </footer>
 
 </main>

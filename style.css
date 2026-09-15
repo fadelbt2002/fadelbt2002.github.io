@@ -434,6 +434,36 @@ section { margin: 0 0 6rem; }
   color: var(--ink-faint);
 }
 
+/* --- technical skills --------------------------------------------------- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.skill {
+  padding: 1.1rem 1.25rem;
+  background: var(--bg);
+}
+.skill dt {
+  margin-bottom: .45rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.skill dd {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--ink-dim);
+}
+
 /* --- footer ----------------------------------------------------------- */
 footer {
   margin-top: 2rem;
