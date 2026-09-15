@@ -354,18 +354,23 @@ section { margin: 0 0 6rem; }
 }
 .interests li {
   position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: .45rem;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--ink-dim);
+  line-height: 1.7;
 }
 .interests li::before {
   content: "";
   position: absolute;
-  left: .15rem; top: .72em;
+  left: .15rem; top: .78em;
   width: 5px; height: 5px;
   border-radius: 50%;
   background: var(--cyan);
   opacity: .7;
+}
+.interests strong {
+  color: var(--ink);
+  font-weight: 600;
 }
 
 /* --- talks ----------------------------------------------------------- */
