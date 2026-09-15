@@ -97,10 +97,16 @@
           &ldquo;Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma Using
           Multimodal Data.&rdquo; <em>American Journal of Neuroradiology</em>, July 2026.
         </p>
-        <p class="pub-note">Deep learning features from a single T2-weighted MRI, fused with
-        molecular subtype and clinical variables, to predict progression-free survival. Every risk
-        score carries a per-patient confidence interval, and late fusion with the molecular model
-        narrowed those intervals by about 75%.</p>
+        <p class="pub-note">Deep learning features extracted from a single T2-weighted MRI are
+        combined with molecular subtype and clinical variables to predict progression-free
+        survival, using 360 subjects with imaging and 493 with genomic profiling from the
+        Children&rsquo;s Brain Tumor Network. The clinico-imaging model reached Harrell&rsquo;s
+        C-indices of 0.73 in discovery and 0.70 in replication, statistically comparable to a
+        multiparametric radiomic pipeline while requiring neither tumor segmentation nor multiple
+        sequences. Late fusion with a clinical-molecular model improved replication performance
+        (0.68 vs 0.63) and reclassified 18 patients in a manner consistent with established
+        BRAF-associated prognostic biology. Bootstrap resampling gives every patient a confidence
+        interval on their risk score, and fusion narrowed the median width by about 75%.</p>
         <p class="pub-meta">
           <span class="tag tag-live">Published</span>
           <a href="https://doi.org/10.3174/ajnr.A9550">doi:10.3174/ajnr.A9550</a>
@@ -113,13 +119,17 @@
           &ldquo;PedDx: An Uncertainty-Aware Deep Learning Framework for Pediatric Posterior Fossa
           Tumor Diagnosis With Agentic AI-Enabled Independent External Evaluation.&rdquo;
         </p>
-        <p class="pub-note">A segmentation-free classifier for five posterior fossa histologies,
-        trained on skull-stripped T2-weighted MRI across three institutions. It calibrates its
-        probabilities, abstains when no class clears its threshold, and is evaluated under real
-        distribution shift, including post-treatment imaging, artifact, and rare histologies
-        withheld from training. An agentic layer around the locked model decides whether a case is
-        eligible for a diagnosis at all; a collaborating team in Australia ran the framework
-        independently and reached 81% accuracy.</p>
+        <p class="pub-note">A segmentation-free 3D ResNet-34, trained on skull-stripped T2-weighted
+        MRI across three institutions, classifies five posterior fossa histologies: medulloblastoma,
+        ependymoma, atypical teratoid/rhabdoid tumor, low-grade glioma, and diffuse midline glioma.
+        Discovery AUC-ROC ranged from 0.95 for diffuse midline glioma to 0.76 for ependymoma, and on
+        an independent external cohort the model reached 87% accuracy after abstaining on 9.8% of
+        uncertain cases. The study then characterizes behavior under distribution shift, both
+        clinical (post-operative and post-treatment imaging, artifact, tumors not confined to the
+        posterior fossa) and biological (rare histologies excluded from training), finding class-
+        and shift-specific degradation rather than uniform failure. An agentic layer wraps the
+        locked model and decides whether a case is eligible for a prediction at all; a collaborating
+        team in Australia ran the framework independently and reached 81% accuracy.</p>
         <p class="pub-meta">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
@@ -132,10 +142,12 @@
           &ldquo;Uncertainty-Aware AI Assistance for Pediatric Posterior Fossa Tumor Diagnosis:
           A Multireader Study.&rdquo;
         </p>
-        <p class="pub-note">A paired study in which neuroradiologists diagnose the same cases
-        before and after seeing model output, so each reader is their own control. It asks whether
-        an explicit uncertainty estimate changes how much weight readers give a prediction, and
-        when assistance helps rather than hurts.</p>
+        <p class="pub-note">Roughly a dozen neuroradiologists read fifty pediatric posterior fossa
+        cases, recording a diagnosis before and after seeing the model&rsquo;s output, so each
+        reader serves as their own control. The study asks not only whether accuracy moves but
+        under what conditions assistance helps or harms: whether readers defer to confident errors,
+        and whether an explicit uncertainty estimate changes how much weight they give a
+        prediction.</p>
         <p class="pub-meta">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
