@@ -24,7 +24,7 @@
   <a class="pill" href="https://www.linkedin.com/in/fadelbatal">LinkedIn</a>
   <span class="pill-group">
     <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
+    <a href="#talks">Presentations</a>
     <a href="#skills">Skills</a>
   </span>
 </nav>
@@ -119,17 +119,13 @@
           &ldquo;PedDx: An Uncertainty-Aware Deep Learning Framework for Pediatric Posterior Fossa
           Tumor Diagnosis With Agentic AI-Enabled Independent External Evaluation.&rdquo;
         </p>
-        <p class="pub-note">A segmentation-free 3D ResNet-34, trained on skull-stripped T2-weighted
-        MRI across three institutions, classifies five posterior fossa histologies: medulloblastoma,
-        ependymoma, atypical teratoid/rhabdoid tumor, low-grade glioma, and diffuse midline glioma.
-        Discovery AUC-ROC ranged from 0.95 for diffuse midline glioma to 0.76 for ependymoma, and on
-        an independent external cohort the model reached 87% accuracy after abstaining on 9.8% of
-        uncertain cases. The study then characterizes behavior under distribution shift, both
-        clinical (post-operative and post-treatment imaging, artifact, tumors not confined to the
-        posterior fossa) and biological (rare histologies excluded from training), finding class-
-        and shift-specific degradation rather than uniform failure. An agentic layer wraps the
-        locked model and decides whether a case is eligible for a prediction at all; a collaborating
-        team in Australia ran the framework independently and reached 81% accuracy.</p>
+        <p class="pub-note">A segmentation-free deep learning framework that classifies the major
+        posterior fossa histologies from routine T2-weighted MRI, with no tumor delineation step.
+        It calibrates its probabilities, abstains on cases it cannot call confidently, and is
+        evaluated under clinical and biological distribution shift rather than on a curated test
+        set alone. An agentic layer wraps the locked model and decides whether a case is eligible
+        for a prediction at all, and the framework has been run independently by a collaborating
+        team abroad.</p>
         <p class="pub-meta">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
@@ -142,12 +138,10 @@
           &ldquo;Uncertainty-Aware AI Assistance for Pediatric Posterior Fossa Tumor Diagnosis:
           A Multireader Study.&rdquo;
         </p>
-        <p class="pub-note">Roughly a dozen neuroradiologists read fifty pediatric posterior fossa
-        cases, recording a diagnosis before and after seeing the model&rsquo;s output, so each
-        reader serves as their own control. The study asks not only whether accuracy moves but
-        under what conditions assistance helps or harms: whether readers defer to confident errors,
-        and whether an explicit uncertainty estimate changes how much weight they give a
-        prediction.</p>
+        <p class="pub-note">A reader study asking not only whether accuracy moves when
+        neuroradiologists are shown model output, but under what conditions assistance helps or
+        harms: whether readers defer to confident errors, and whether an explicit uncertainty
+        estimate changes how much weight they give a prediction.</p>
         <p class="pub-meta">
           <span class="tag">In preparation</span>
           Co-first author &middot; 2026
@@ -184,7 +178,7 @@
   </section>
 
   <section id="talks" class="reveal">
-    <h2 class="label"><span>02</span> Talks &amp; posters</h2>
+    <h2 class="label"><span>02</span> Conferences &amp; presentations</h2>
     <ul class="talks">
       <li>
         <span class="talk-year">2026</span>
