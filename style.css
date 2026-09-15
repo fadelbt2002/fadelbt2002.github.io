@@ -254,6 +254,20 @@ section { margin: 0 0 6rem; }
 .intro { max-width: 44rem; }
 .intro p { color: var(--ink-dim); }
 .intro a { border-bottom: 1px solid rgba(94,231,255,.3); }
+.intro p { margin: 0 0 1.15rem; }
+
+/* inline pointers to the publication list below */
+a.ref {
+  font-family: var(--mono);
+  font-size: .8em;
+  white-space: nowrap;
+  border-bottom: none;
+  opacity: .9;
+}
+a.ref:hover { opacity: 1; text-decoration: underline; }
+
+/* highlight a publication when an inline ref jumps to it */
+.pubs li:target .cite { color: var(--cyan); }
 .label {
   display: flex;
   align-items: baseline;
@@ -345,33 +359,6 @@ section { margin: 0 0 6rem; }
   color: var(--ink-faint);
 }
 
-/* interest list in the intro */
-.interests {
-  max-width: 44rem;
-  margin: 0 0 1.25rem;
-  padding: 0;
-  list-style: none;
-}
-.interests li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--ink-dim);
-  line-height: 1.7;
-}
-.interests li::before {
-  content: "";
-  position: absolute;
-  left: .15rem; top: .78em;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--cyan);
-  opacity: .7;
-}
-.interests strong {
-  color: var(--ink);
-  font-weight: 600;
-}
 
 /* --- talks ----------------------------------------------------------- */
 .talks { max-width: 54rem; margin: 0; padding: 0; list-style: none; }

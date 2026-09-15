@@ -60,38 +60,17 @@
     <a href="https://www.chop.edu/doctors/fathi-kazerooni-anahita">Dr. Anahita Fathi Kazerooni</a>
     on computer vision and deep learning for pediatric neuro-oncology.</p>
 
-    <p>I am broadly interested in imaging models that a clinician can act on. A model that is
-    accurate on average is not the same as a model that is useful for the patient in front of you,
-    and most of what I work on sits in that gap:</p>
-
-    <ul class="interests">
-      <li><strong>Uncertainty-aware prediction.</strong> Getting a model to express how far an
-      individual prediction can be trusted, and to abstain when the evidence does not support one,
-      instead of reporting a single accuracy figure over a whole test set.</li>
-
-      <li><strong>Multimodal representation learning.</strong> How imaging should be combined with
-      molecular, histologic, and clinical data when the modalities are incomplete, unevenly
-      informative, and available for different subsets of patients.</li>
-
-      <li><strong>Robustness under distribution shift.</strong> What a model does when it meets a
-      post-treatment scan, a degraded acquisition, or a histology absent from training, and how
-      those cases can be recognized before a prediction is released.</li>
-
-      <li><strong>Agentic AI for medical image analysis.</strong> Using language models as an
-      orchestration and verification layer around locked quantitative models, to decide whether a
-      case is eligible for a prediction at all, while the diagnosis itself stays grounded in the
-      model rather than in free-form generation.</li>
-
-      <li><strong>Learning from small cohorts.</strong> Transfer learning and segmentation-free
-      representations for pediatric data, where a few hundred subjects is a large study and
-      annotation is expensive.</li>
-
-      <li><strong>Human-AI collaboration.</strong> Whether uncertainty-aware output changes what a
-      clinician concludes, measured in reader studies rather than benchmark tables.</li>
-    </ul>
-
-    <p>I would also like to work beyond MRI, particularly in digital pathology, where the same
-    questions apply to a very different kind of image.</p>
+    <p>I study deep learning for medical imaging, with a focus on what a model should do when it
+    is unsure: how to attach uncertainty to an individual prediction rather than to a test set
+    <a class="ref" href="#p1">[1]</a>, when a model should abstain instead of answering
+    <a class="ref" href="#p2">[2]</a>, and how imaging should be fused with molecular and clinical
+    data to produce something a physician can act on
+    <a class="ref" href="#p1">[1,&nbsp;4]</a>. More recently I have been working on agentic layers
+    that sit around a locked model and decide whether a case is eligible for a prediction at all
+    <a class="ref" href="#p2">[2]</a>, and on whether any of this changes what a clinician
+    concludes, measured in reader studies rather than benchmark tables
+    <a class="ref" href="#p3">[3]</a>. I would like to take the same questions beyond MRI,
+    particularly into digital pathology.</p>
 
     <p>Previously I completed my BSE and MSE in Bioengineering at the
     <a href="https://be.seas.upenn.edu/">University of Pennsylvania</a>, where my master&rsquo;s
@@ -106,7 +85,7 @@
     <p class="note"><sup>&dagger;</sup>&nbsp;Equal contribution.</p>
 
     <ol class="pubs">
-      <li>
+      <li id="p1">
         <p class="cite">
           <span class="me">Batal, F.</span>, et al.
           &ldquo;Uncertainty-Aware Risk Stratification in Pediatric Low-Grade Glioma Using
@@ -122,7 +101,7 @@
         </p>
       </li>
 
-      <li>
+      <li id="p2">
         <p class="cite">
           Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
           &ldquo;PedDx: An Uncertainty-Aware Deep Learning Framework for Pediatric Posterior Fossa
@@ -141,7 +120,7 @@
         </p>
       </li>
 
-      <li>
+      <li id="p3">
         <p class="cite">
           Kazerooni, A.F.<sup>&dagger;</sup>, <span class="me">Batal, F.</span><sup>&dagger;</sup>, et al.
           &ldquo;Uncertainty-Aware AI Assistance for Pediatric Posterior Fossa Tumor Diagnosis:
@@ -157,7 +136,7 @@
         </p>
       </li>
 
-      <li>
+      <li id="p4">
         <p class="cite">
           Vunnava, B., Lu, M., <span class="me">Batal, F.</span>, et al.
           &ldquo;Atlas-Based MRI Spatial Phenotyping in Pediatric Low-Grade Glioma.&rdquo;
@@ -170,7 +149,7 @@
         </p>
       </li>
 
-      <li>
+      <li id="p5">
         <p class="cite">
           An, K., <span class="me">Batal, F.</span>, Svyatskaya, S., Nguyen, V.
           &ldquo;Gene Therapy as a Promising Approach for the Underlying Causes of Autism Spectrum
